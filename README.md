@@ -3,6 +3,10 @@
 Welcome to my own collection of custom **Flipper Zero scripts**, dumps, and tools! </p>
 This repository is designed to support the latest OS releases and enhance your Flipper Zero experience. </p>
 Whether you're looking for powerful scripts for Wi-Fi hacking, or exploring the endless possibilities of the Flipper Zero, you'll find something here to play with!
+## My Hardware
+
+#### [WiFi Board (ESP8266 ESP DEAUTHER + FlipperZero)](hardware/wifi_board)
+<img src=".assets/MySetup.jpg" style="width:40%">
 
 #### WiFi Board: ESP8266 DSTIKE DEAUTHER + FlipperZero
 <img src=".assets/MySetup.jpg" style="width:95">
