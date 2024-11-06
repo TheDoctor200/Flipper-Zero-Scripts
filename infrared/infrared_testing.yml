@@ -1,0 +1,7 @@
+# Sample einer YAML-Datei für Flipper Zero IR-Befehl / CMD
+# IR = Infrared
+type: ir
+name: "Monitor Power"
+data: 0xA90 # Nur ein Beispiel muss noch Gerätespezifisch geändert werden
+protocol: NEC # Verwendetes Protokol 
+frequency: 38000 # IR Frequenz der Vernbedienung 
