@@ -5,8 +5,7 @@ DELAY 700
 STRING powershell
 ENTER
 DELAY 1200
-STRING Start-Process powershell -Verb runAs
+STRING Start-Process powershell -Verb runAs -ArgumentList '-NoExit', '-Command', '(Get-BitLockerVolume -MountPoint C).KeyProtector; (Get-BitLockerVolume -MountPoint D).KeyProtector'
 ENTER
-DELAY 1200
-STRING Get-BitLockerVolume | Select-Object -Property MountPoint, KeyProtector
-ENTER
+
+
