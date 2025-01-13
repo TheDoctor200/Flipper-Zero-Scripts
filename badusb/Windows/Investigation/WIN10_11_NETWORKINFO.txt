@@ -1,0 +1,22 @@
+DELAY 500
+REM Open the Run dialog
+GUI r
+DELAY 500
+REM Type PowerShell and run as administrator
+STRING powershell
+DELAY 500
+ENTER
+DELAY 1200
+REM Wait for the UAC prompt and confirm
+DELAY 1000
+STRING Start-Process powershell -Verb runAs
+ENTER
+DELAY 1200
+REM Gather network configuration
+STRING ipconfig /all | Out-File "$env:USERPROFILE\Desktop\NetworkConfig.txt"
+ENTER
+DELAY 1000
+REM Close PowerShell
+STRING exit
+ENTER
+
