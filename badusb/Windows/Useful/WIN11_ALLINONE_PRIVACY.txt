@@ -1,0 +1,34 @@
+DELAY 500
+REM Open PowerShell
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 1000
+
+REM Change to the Downloads directory
+STRING cd $env:USERPROFILE\Downloads
+ENTER
+DELAY 500
+
+REM Download the ZIP file of the repository
+STRING Invoke-WebRequest -Uri "https://github.com/Raphire/Win11Debloat/archive/refs/heads/master.zip" -OutFile "Win11Debloat.zip"
+ENTER
+DELAY 500
+
+REM Extract the ZIP file
+STRING Expand-Archive -Path "Win11Debloat.zip" -DestinationPath "Win11Debloat" -Force
+ENTER
+DELAY 500
+
+REM Change to the extracted directory
+STRING cd Win11Debloat\Win11Debloat-master
+ENTER
+DELAY 500
+
+REM Run the batch file
+STRING .\run.bat
+ENTER
+
+
+
