@@ -1,0 +1,15 @@
+DELAY 500
+REM This script uninstalls common bloatware applications
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 500
+STRING powershell -Command "Get-AppxPackage -Name TikTok | Remove-AppxPackage"
+ENTER
+DELAY 500
+STRING powershell -Command "Get-AppxPackage -Name Instagram | Remove-AppxPackage"
+ENTER
+DELAY 500
+STRING powershell -Command "Get-AppxPackage -Name Spotify | Remove-AppxPackage"
+ENTER

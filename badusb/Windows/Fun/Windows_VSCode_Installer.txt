@@ -1,0 +1,21 @@
+DELAY 500
+GUI r
+DELAY 200
+STRING https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user
+ENTER
+DELAY 30000  
+CTRL j      
+DELAY 1000
+TAB         
+DELAY 500
+ENTER       
+DELAY 5000  
+ALT y       
+DELAY 2000
+ENTER       
+DELAY 500
+TAB         
+DELAY 500
+ENTER       
+DELAY 2000
+ENTER       

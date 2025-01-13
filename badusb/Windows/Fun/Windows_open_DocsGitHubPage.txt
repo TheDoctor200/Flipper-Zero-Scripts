@@ -1,0 +1,6 @@
+DELAY 500
+GUI r
+DELAY 200
+STRING https://github.com/TheDoctor200
+DELAY 300
+ENTER
