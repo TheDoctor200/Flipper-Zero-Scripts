@@ -1,0 +1,9 @@
+DELAY 700
+REM Open PowerShell as Administrator
+GUI r
+DELAY 700
+STRING powershell
+ENTER
+DELAY 1200
+STRING Start-Process powershell -Verb runAs -ArgumentList '-NoExit', '-Command', '(Get-WmiObject -query ''select * from SoftwareLicensingService'').OA3xOriginalProductKey'
+ENTER
