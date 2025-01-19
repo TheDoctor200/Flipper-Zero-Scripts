@@ -1,11 +1,19 @@
 DELAY 500
-REM This script creates an empty ip_address.txt file on the desktop
+REM This script opens PowerShell
 GUI r
 DELAY 500
-STRING powershell -Command "New-Item -Path 'C:\Users\$env:USERNAME\Desktop\ip_address.txt' -ItemType File -Force"
+STRING powershell
+ENTER
+DELAY 1000
+
+REM This script creates an empty ip_address.txt file on the desktop
+STRING New-Item -Path "$env:USERPROFILE\Desktop\ip_address.txt" -ItemType File -Force
 ENTER
 DELAY 500
 
 REM This script retrieves the IP address and saves it to the text file
-STRING ipconfig > C:\Users\$env:USERNAME\Desktop\ip_address.txt
+STRING ipconfig | Out-File -FilePath "$env:USERPROFILE\Desktop\ip_address.txt"
 ENTER
+
+
+
