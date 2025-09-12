@@ -131,6 +131,7 @@ def main():
     parser.add_argument('--temp', type=float, default=20.0, help='Temperature in Celsius')
     parser.add_argument('--humidity', type=int, default=65, help='Humidity percentage')
     parser.add_argument('--flipper', action='store_true', help='Generate Flipper Zero RAW_Data')
+    parser.add_argument('--weather-app', action='store_true', help='Optimize for Weather Station app by @Skorpionm')
     
     args = parser.parse_args()
     

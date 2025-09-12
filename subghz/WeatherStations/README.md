@@ -4,6 +4,13 @@ This directory contains Sub-GHz scripts for various weather stations that can be
 
 ## Tchibo Weather Station TCM220063
 
+### Available Files
+- **`TCM220063_WeatherApp.sub`** - ⭐ **RECOMMENDED**: Optimized for Weather Station app by @Skorpionm
+- **`TCM220063.sub`** - Standard Sub-GHz file for general use
+- **`TCM220063.txt`** - Text format with protocol documentation
+- **`decode_tcm220063.py`** - Python utility for encoding/decoding data packets
+- **`README.md`** - This documentation file
+
 ### Overview
 The **TCM220063** is a wireless weather station sold by Tchibo that transmits temperature and humidity data via 433.92 MHz radio frequency.
 
@@ -36,7 +43,17 @@ The temperature is encoded as: `Raw Value = (Temperature + 40.0) × 10`
 
 ## How to Use
 
-### Method 1: Using the Sub-GHz File
+### Method 1: Weather Station App by @Skorpionm ⭐ **BEST OPTION**
+This is the recommended method as it provides automatic decoding and a proper weather display interface.
+
+**Quick Start:**
+1. **Install app**: https://lab.flipper.net/apps/sub_ghz_weather_station
+2. **Copy file**: `TCM220063_WeatherApp.sub` → `/ext/subghz/`
+3. **Open Weather Station app** → **Read** mode
+4. **Load and play** the .sub file
+5. **View decoded weather data** in real-time
+
+### Method 2: Standard Sub-GHz App
 1. **Copy the Script:**
    ```
    Copy TCM220063.sub to your Flipper Zero SD card:
@@ -53,13 +70,31 @@ The temperature is encoded as: `Raw Value = (Temperature + 40.0) × 10`
    - The transmitted data will appear as sensor readings
    - Try different packets for various temperature/humidity values
 
-### Method 2: Using Weather Apps
-Some third-party Flipper Zero weather applications can use these scripts directly:
+### Method 2: Using Weather Station App by @Skorpionm ⭐ RECOMMENDED
+The **Weather Station app** by @Skorpionm has native support for Nexus-TH protocol (which TCM220063 uses):
 
-1. **Install Weather App** (if available from community)
-2. **Place Script** in the app's designated folder
-3. **Configure** the app to use TCM220063 protocol
-4. **Monitor** or **Transmit** weather data as needed
+**Installation:**
+1. **Install Weather Station App**: https://lab.flipper.net/apps/sub_ghz_weather_station
+   - Or via Flipper Lab: Search for "Weather Station" by @Skorpionm
+2. **Copy optimized script**: Use `TCM220063_WeatherApp.sub` (optimized for this app)
+3. **Place in**: `/ext/subghz/TCM220063_WeatherApp.sub`
+
+**Usage:**
+1. **Open Weather Station app** on your Flipper Zero
+2. **Go to "Read" mode** 
+3. **Load the .sub file** and play it
+4. **The app automatically decodes** Nexus-TH signals and displays:
+   - Temperature (°C)
+   - Humidity (%)
+   - Channel ID
+   - Signal strength
+5. **Real-time display** with proper units and formatting
+
+**Supported Protocols in Weather Station App:**
+- ✅ **Nexus-TH** (TCM220063 protocol)
+- inFactory-TH, ThermoPRO-TX4, GT-WT02, Acurite series, Oregon series, and many more
+
+**App Version:** v1.8+ (supports external CC1101 radio modules)
 
 ### Method 3: Capturing Real Data
 To capture your own weather station signals:
