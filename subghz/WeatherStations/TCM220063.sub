@@ -1,0 +1,50 @@
+Filetype: Flipper SubGhz RAW File
+Version: 1
+Frequency: 433920000
+Preset: FuriHalSubGhzPresetOok270Async
+Protocol: RAW
+#
+# Tchibo Weather Station TCM220063 Sub-GHz Script
+# Compatible with Flipper Zero Weather App
+#
+# Device Information:
+# - Model: TCM220063 (Tchibo/TCM brand)
+# - Frequency: 433.92 MHz
+# - Modulation: OOK (On-Off Keying)
+# - Data Rate: ~1 kbps
+# - Transmission Interval: Every 60 seconds
+# - Range: Up to 100 meters (line of sight)
+#
+# Protocol Details:
+# - Based on Nexus Weather Protocol
+# - Packet Length: 36 bits
+# - Manchester encoding
+# - Preamble: 12 bits alternating pattern
+# - Sync word: 4 bits
+# - Data payload: 32 bits
+# - No CRC (checksum calculated differently)
+#
+# Data Packet Structure (32 bits after preamble/sync):
+# Bits 0-3:   Channel ID (0-2, typically 0)
+# Bits 4-11:  Rolling code/Random ID (changes on battery replacement)
+# Bits 12-23: Temperature (signed 12-bit, 0.1°C resolution, offset +40°C)
+# Bits 24-31: Humidity (8-bit, 0-100%)
+#
+# Temperature Calculation:
+# Raw value represents (temperature + 40.0) * 10
+# Example: Raw 235 = (23.5 - 40.0) = -16.5°C
+#          Raw 450 = (45.0 - 40.0) = 5.0°C
+#
+# Example Transmissions:
+# Packet 1: Channel 0, ID 0x5A, Temp 20.5°C (raw: 605), Humidity 65%
+RAW_Data: 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -20000
+
+# Packet 2: Channel 0, ID 0x5A, Temp 21.0°C (raw: 610), Humidity 63%
+RAW_Data: 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -1500 1500 -500 500 -1500 1500 -20000
+
+# Packet 3: Channel 0, ID 0x5A, Temp 19.8°C (raw: 598), Humidity 68%
+RAW_Data: 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -20000
+
+# Packet 4: Low battery indicator example
+# When battery is low, bit pattern may include low battery flag
+RAW_Data: 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -1500 1500 -500 500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -500 500 -1500 1500 -500 500 -500 500 -500 500 -20000
