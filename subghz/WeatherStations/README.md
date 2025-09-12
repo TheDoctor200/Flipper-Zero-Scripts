@@ -43,17 +43,25 @@ The temperature is encoded as: `Raw Value = (Temperature + 40.0) × 10`
 
 ## How to Use
 
-### Method 1: Weather Station App by @Skorpionm ⭐ **BEST OPTION**
-This is the recommended method as it provides automatic decoding and a proper weather display interface.
+### Method 1: Weather Station App by @Skorpionm ⭐ **BEST FOR LIVE SIGNALS**
+This app automatically decodes live weather station signals (no "read mode" - it just listens).
 
-**Quick Start:**
+**How it works:**
 1. **Install app**: https://lab.flipper.net/apps/sub_ghz_weather_station
-2. **Copy file**: `TCM220063_WeatherApp.sub` → `/ext/subghz/`
-3. **Open Weather Station app** → **Read** mode
-4. **Load and play** the .sub file
-5. **View decoded weather data** in real-time
+2. **Open Weather Station app** on your Flipper Zero
+3. **The app automatically listens** on 433.92 MHz
+4. **Hold Flipper near** your actual TCM220063 weather station
+5. **Wait up to 60 seconds** for the station to transmit
+6. **App automatically decodes** and displays the Nexus-TH data
 
-### Method 2: Standard Sub-GHz App
+**What you'll see:**
+- Temperature, Humidity, Channel ID
+- Battery status, Signal strength
+- Real-time updates every 60 seconds
+
+### Method 2: Standard Sub-GHz App ⭐ **FOR USING SAVED SIGNALS**
+**For emulating/transmitting weather station signals:**
+
 1. **Copy the Script:**
    ```
    Copy TCM220063.sub to your Flipper Zero SD card:
@@ -69,6 +77,15 @@ This is the recommended method as it provides automatic decoding and a proper we
    - Point your Flipper Zero towards compatible weather receivers
    - The transmitted data will appear as sensor readings
    - Try different packets for various temperature/humidity values
+
+**For receiving live weather station signals:**
+
+1. **Sub-GHz** → **Read RAW**
+2. **Set frequency** to 433.92 MHz  
+3. **Set modulation** to AM650
+4. **Hold near** your TCM220063 weather station
+5. **Wait** for transmission (every 60 seconds)
+6. **Save** captured signal for later analysis
 
 ### Method 2: Using Weather Station App by @Skorpionm ⭐ RECOMMENDED
 The **Weather Station app** by @Skorpionm has native support for Nexus-TH protocol (which TCM220063 uses):

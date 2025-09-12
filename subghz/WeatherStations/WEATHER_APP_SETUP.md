@@ -21,9 +21,12 @@ This guide helps you set up the TCM220063 weather station with the Weather Stati
 
 ### Step 3: Use the App
 1. **Open** the **Weather Station** app on your Flipper
-2. **Navigate** to **"Read"** mode  
-3. **Press OK** to start scanning for weather signals
-4. **Alternatively**, load the `.sub` file to test with sample data
+2. **The app automatically starts listening** for weather signals
+3. **Hold Flipper near** your actual TCM220063 weather station  
+4. **Wait up to 60 seconds** for the station to transmit
+5. **The app will automatically decode** and display the data
+
+**Note**: The Weather Station app doesn't have a "read mode" - it continuously listens for live signals and decodes them automatically.
 
 ## 🎯 What You'll See
 
@@ -43,16 +46,23 @@ When the app detects TCM220063 signals, it will display:
 
 ## 🔧 Testing Your Setup
 
-### Test with Sample Data:
-1. **Load file**: Navigate to **"Saved"** → **"TCM220063_WeatherApp.sub"**
-2. **Press Play**: The app should decode and display the weather data
-3. **Try different packets**: Use the navigation to test various temperature/humidity combinations
-
-### Test with Real Weather Station:
-1. **Set to Read mode**
+### Test with Real Weather Station (Weather Station App):
+1. **Open Weather Station app** (it automatically starts listening)
 2. **Hold Flipper near** your actual TCM220063 weather station
 3. **Wait up to 60 seconds** (station transmits every minute)
 4. **Check the display** for decoded data
+
+### Test with Saved Data (Standard Sub-GHz App):
+1. **Open Sub-GHz app** → **Saved** → **"TCM220063.sub"**
+2. **Press Emulate**: This transmits the sample weather data
+3. **Use another Flipper** or weather receiver to test reception
+4. **Try different packets**: Navigate through various temperature/humidity combinations
+
+### Capture Your Own Signals (Sub-GHz Read RAW):
+1. **Sub-GHz** → **Read RAW**
+2. **Set frequency**: 433.92 MHz, **Modulation**: AM650
+3. **Hold near weather station** and wait for transmission
+4. **Save captured signal** for analysis
 
 ## ✅ Supported Weather Data
 
