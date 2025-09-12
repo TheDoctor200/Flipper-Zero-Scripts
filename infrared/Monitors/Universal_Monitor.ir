@@ -1,0 +1,132 @@
+Filetype: IR signals file
+Version: 1
+#
+# Universal Monitor IR Remote Control
+# Common IR codes that work across multiple monitor brands
+# Try these first if your specific brand doesn't work
+#
+name: Power_Generic1
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 12 00 00 00
+#
+name: Power_Generic2
+type: parsed
+protocol: NEC
+address: 83 00 00 00
+command: 14 00 00 00
+#
+name: Power_Generic3
+type: parsed
+protocol: RC5
+address: 00 00 00 00
+command: 0C 00 00 00
+#
+name: Menu_Generic1
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 16 00 00 00
+#
+name: Menu_Generic2
+type: parsed
+protocol: NEC
+address: 83 00 00 00
+command: 1A 00 00 00
+#
+name: Up_Generic
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 52 00 00 00
+#
+name: Down_Generic
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 13 00 00 00
+#
+name: Left_Generic
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 51 00 00 00
+#
+name: Right_Generic
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 50 00 00 00
+#
+name: Enter_Generic1
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 17 00 00 00
+#
+name: Enter_Generic2
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 68 00 00 00
+#
+name: Source_Generic1
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 01 00 00 00
+#
+name: Source_Generic2
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 0B 00 00 00
+#
+name: Auto_Generic1
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 18 00 00 00
+#
+name: Auto_Generic2
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 3D 00 00 00
+#
+name: Exit_Generic
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 15 00 00 00
+#
+name: Brightness_Up_Generic
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 10 00 00 00
+#
+name: Brightness_Down_Generic
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 11 00 00 00
+#
+name: Volume_Up_Generic
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 1E 00 00 00
+#
+name: Volume_Down_Generic
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 1F 00 00 00
+#
+name: Mute_Generic
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 09 00 00 00

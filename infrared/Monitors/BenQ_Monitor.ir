@@ -1,0 +1,89 @@
+Filetype: IR signals file
+Version: 1
+#
+# BenQ Monitor IR Remote Control
+# Compatible with most BenQ LCD/LED monitors
+#
+name: Power
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 00 00 00 00
+#
+name: Menu
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 30 00 00 00
+#
+name: Up
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 31 00 00 00
+#
+name: Down
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 32 00 00 00
+#
+name: Left
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 34 00 00 00
+#
+name: Right
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 33 00 00 00
+#
+name: Enter
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 35 00 00 00
+#
+name: Source
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 28 00 00 00
+#
+name: Auto
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 37 00 00 00
+#
+name: Exit
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 36 00 00 00
+#
+name: ECO
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 2F 00 00 00
+#
+name: Mode
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 14 00 00 00
+#
+name: Brightness_Up
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 3C 00 00 00
+#
+name: Brightness_Down
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 3D 00 00 00

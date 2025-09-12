@@ -1,0 +1,89 @@
+Filetype: IR signals file
+Version: 1
+#
+# Samsung Monitor IR Remote Control
+# Compatible with most Samsung LCD/LED monitors
+#
+name: Power
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 14 00 00 00
+#
+name: Menu
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 1A 00 00 00
+#
+name: Up
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 60 00 00 00
+#
+name: Down
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 61 00 00 00
+#
+name: Left
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 65 00 00 00
+#
+name: Right
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 62 00 00 00
+#
+name: Enter
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 68 00 00 00
+#
+name: Source
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 01 00 00 00
+#
+name: Auto
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 3D 00 00 00
+#
+name: Exit
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 2D 00 00 00
+#
+name: Brightness_Up
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 02 00 00 00
+#
+name: Brightness_Down
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 03 00 00 00
+#
+name: Contrast_Up
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 04 00 00 00
+#
+name: Contrast_Down
+type: parsed
+protocol: NEC
+address: 0E 00 00 00
+command: 05 00 00 00
