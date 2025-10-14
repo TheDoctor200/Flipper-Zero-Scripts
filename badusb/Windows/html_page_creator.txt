@@ -1,0 +1,41 @@
+REM Creates a simple HTML page and opens it
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING notepad "%USERPROFILE%\Desktop\flipper_page.html"
+ENTER
+DELAY 1500
+STRING <!DOCTYPE html>
+ENTER
+STRING <html>
+ENTER
+STRING <head><title>Flipper Zero Rocks!</title></head>
+ENTER
+STRING <body style="background-color: black; color: lime; font-family: monospace;">
+ENTER
+STRING <h1>Hello from Flipper Zero!</h1>
+ENTER
+STRING <p>This page was created by BadUSB script!</p>
+ENTER
+STRING <p>Current time: <span id="time"></span></p>
+ENTER
+STRING <script>
+ENTER
+STRING document.getElementById('time').innerHTML = new Date();
+ENTER
+STRING </script>
+ENTER
+STRING </body>
+ENTER
+STRING </html>
+ENTER
+DELAY 500
+CTRL s
+DELAY 1000
+ALT F4
+DELAY 1000
+GUI r
+DELAY 800
+STRING "%USERPROFILE%\Desktop\flipper_page.html"
+ENTER

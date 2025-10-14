@@ -1,0 +1,8 @@
+REM Opens several useful Windows tools
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING cmd /c start msconfig & start msinfo32 & start dxdiag
+ENTER
+DELAY 3000

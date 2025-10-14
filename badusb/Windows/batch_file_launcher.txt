@@ -1,0 +1,46 @@
+REM Creates a useful batch file on Desktop
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING notepad "%USERPROFILE%\Desktop\Quick_Tools.bat"
+ENTER
+DELAY 1500
+STRING @echo off
+ENTER
+STRING echo ================================
+ENTER
+STRING echo     FLIPPER QUICK TOOLS MENU
+ENTER
+STRING echo ================================
+ENTER
+STRING echo 1. Open Task Manager
+ENTER
+STRING echo 2. Open System Information
+ENTER
+STRING echo 3. Open Device Manager
+ENTER
+STRING echo 4. Open Network Connections
+ENTER
+STRING echo 5. Exit
+ENTER
+STRING echo ================================
+ENTER
+STRING set /p choice=Enter your choice (1-5): 
+ENTER
+STRING if "%choice%"=="1" taskmgr
+ENTER
+STRING if "%choice%"=="2" msinfo32
+ENTER
+STRING if "%choice%"=="3" devmgmt.msc
+ENTER
+STRING if "%choice%"=="4" ncpa.cpl
+ENTER
+STRING if "%choice%"=="5" exit
+ENTER
+STRING pause
+ENTER
+DELAY 500
+CTRL s
+DELAY 1000
+ALT F4

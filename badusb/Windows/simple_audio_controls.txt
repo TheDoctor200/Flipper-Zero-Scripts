@@ -1,0 +1,18 @@
+REM Simple audio controls and sound settings
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING sndvol
+ENTER
+DELAY 2000
+GUI r
+DELAY 800
+STRING mmsys.cpl
+ENTER
+DELAY 2000
+GUI r
+DELAY 800
+STRING cmd /c nircmd mutesysvolume 0 & nircmd changesysvolume 32000
+ENTER
+DELAY 1000

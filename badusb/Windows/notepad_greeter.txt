@@ -1,0 +1,23 @@
+REM Safe Notepad greeter
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING notepad
+ENTER
+DELAY 1500
+STRING Hello from Flipper Zero! :)
+ENTER
+DELAY 300
+STRING This is a safe demo that just types in Notepad.
+ENTER
+DELAY 300
+STRING Enjoy your day and stay awesome!
+ENTER
+DELAY 300
+STRING =========================================
+ENTER
+STRING  Made with love and lots of safe delays
+ENTER
+STRING =========================================
+ENTER

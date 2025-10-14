@@ -1,0 +1,87 @@
+REM Creates a PowerShell script with useful functions
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING notepad "%USERPROFILE%\Desktop\FlipperUtils.ps1"
+ENTER
+DELAY 1500
+STRING # Flipper Zero PowerShell Utilities
+ENTER
+STRING # Created by BadUSB script
+ENTER
+STRING 
+ENTER
+STRING function Get-FlipperSystemInfo {
+ENTER
+STRING     Write-Host "=== FLIPPER SYSTEM INFO ===" -ForegroundColor Cyan
+ENTER
+STRING     Write-Host "Computer: $env:COMPUTERNAME"
+ENTER
+STRING     Write-Host "User: $env:USERNAME"
+ENTER
+STRING     Write-Host "OS: $((Get-WmiObject Win32_OperatingSystem).Caption)"
+ENTER
+STRING     Write-Host "Uptime: $((Get-Date) - (Get-CimInstance Win32_OperatingSystem).LastBootUpTime)"
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING function Start-FlipperDemos {
+ENTER
+STRING     Write-Host "Starting Flipper Demo Apps..." -ForegroundColor Green
+ENTER
+STRING     Start-Process "calc"
+ENTER
+STRING     Start-Process "notepad"
+ENTER
+STRING     Start-Process "mspaint"
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING function Show-FlipperMenu {
+ENTER
+STRING     Clear-Host
+ENTER
+STRING     Write-Host "=============================" -ForegroundColor Magenta
+ENTER
+STRING     Write-Host "   FLIPPER ZERO UTILITIES" -ForegroundColor Magenta
+ENTER
+STRING     Write-Host "=============================" -ForegroundColor Magenta
+ENTER
+STRING     Write-Host "1. System Information"
+ENTER
+STRING     Write-Host "2. Start Demo Apps"
+ENTER
+STRING     Write-Host "3. Exit"
+ENTER
+STRING     $choice = Read-Host "Choose an option (1-3)"
+ENTER
+STRING     switch($choice) {
+ENTER
+STRING         1 { Get-FlipperSystemInfo }
+ENTER
+STRING         2 { Start-FlipperDemos }
+ENTER
+STRING         3 { exit }
+ENTER
+STRING     }
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING Show-FlipperMenu
+ENTER
+DELAY 500
+CTRL s
+DELAY 1000
+ALT F4
+DELAY 1000
+GUI r
+DELAY 800
+STRING powershell -ExecutionPolicy Bypass -File "%USERPROFILE%\Desktop\FlipperUtils.ps1"
+ENTER

@@ -1,0 +1,8 @@
+REM Opens Windows Features dialog
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING optionalfeatures
+ENTER
+DELAY 2000

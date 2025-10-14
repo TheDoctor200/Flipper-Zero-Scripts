@@ -1,0 +1,40 @@
+REM Runs comprehensive system diagnostics
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING cmd
+ENTER
+DELAY 1200
+STRING echo ===== FLIPPER SYSTEM DIAGNOSTICS ===== > "%USERPROFILE%\Desktop\System_Diagnostics.txt"
+ENTER
+DELAY 800
+STRING echo. >> "%USERPROFILE%\Desktop\System_Diagnostics.txt"
+ENTER
+STRING echo ===== SYSTEM INFORMATION ===== >> "%USERPROFILE%\Desktop\System_Diagnostics.txt"
+ENTER
+DELAY 500
+STRING systeminfo | findstr /C:"Host Name" /C:"OS Name" /C:"System Type" /C:"Total Physical Memory" >> "%USERPROFILE%\Desktop\System_Diagnostics.txt"
+ENTER
+DELAY 2000
+STRING echo. >> "%USERPROFILE%\Desktop\System_Diagnostics.txt"
+ENTER
+STRING echo ===== DISK SPACE ===== >> "%USERPROFILE%\Desktop\System_Diagnostics.txt"
+ENTER
+DELAY 500
+STRING dir c:\ /-c | findstr bytes >> "%USERPROFILE%\Desktop\System_Diagnostics.txt"
+ENTER
+DELAY 1000
+STRING echo. >> "%USERPROFILE%\Desktop\System_Diagnostics.txt"
+ENTER
+STRING echo ===== RUNNING PROCESSES ===== >> "%USERPROFILE%\Desktop\System_Diagnostics.txt"
+ENTER
+DELAY 500
+STRING tasklist | findstr /C:"System" /C:"explorer" /C:"winlogon" >> "%USERPROFILE%\Desktop\System_Diagnostics.txt"
+ENTER
+DELAY 1500
+STRING notepad "%USERPROFILE%\Desktop\System_Diagnostics.txt"
+ENTER
+DELAY 1000
+STRING exit
+ENTER

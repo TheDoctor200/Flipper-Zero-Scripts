@@ -1,0 +1,8 @@
+REM Opens Registry Editor (read-only exploration)
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING regedit
+ENTER
+DELAY 2000

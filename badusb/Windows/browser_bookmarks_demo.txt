@@ -1,0 +1,23 @@
+REM Opens browser and demonstrates bookmark management
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING cmd /c start https://github.com/flipperdevices
+ENTER
+DELAY 3000
+CTRL d
+DELAY 1000
+STRING Flipper Devices GitHub
+ENTER
+DELAY 1000
+GUI r
+DELAY 800
+STRING cmd /c start https://flipperzero.one
+ENTER
+DELAY 3000
+CTRL d
+DELAY 1000
+STRING Flipper Zero Official
+ENTER
+DELAY 1000

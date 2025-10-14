@@ -1,0 +1,28 @@
+REM Collects basic system info and saves to Desktop
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING cmd
+ENTER
+DELAY 1200
+STRING echo ===== SYSTEM INFO ===== > "%USERPROFILE%\Desktop\System_Info.txt"
+ENTER
+DELAY 500
+STRING echo Computer Name: %COMPUTERNAME% >> "%USERPROFILE%\Desktop\System_Info.txt"
+ENTER
+DELAY 500
+STRING echo Username: %USERNAME% >> "%USERPROFILE%\Desktop\System_Info.txt"
+ENTER
+DELAY 500
+STRING systeminfo | findstr /C:"OS Name" /C:"OS Version" /C:"System Type" >> "%USERPROFILE%\Desktop\System_Info.txt"
+ENTER
+DELAY 2000
+STRING echo ==================== >> "%USERPROFILE%\Desktop\System_Info.txt"
+ENTER
+DELAY 500
+STRING notepad "%USERPROFILE%\Desktop\System_Info.txt"
+ENTER
+DELAY 1000
+STRING exit
+ENTER

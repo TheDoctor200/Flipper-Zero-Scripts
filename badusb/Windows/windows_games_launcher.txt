@@ -1,0 +1,18 @@
+REM Launches Windows built-in games and entertainment
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING cmd /c start ms-gamingoverlay: & start ms-gaming-overlay: & start solitaire
+ENTER
+DELAY 2000
+GUI r
+DELAY 800
+STRING mspaint
+ENTER
+DELAY 1500
+GUI r
+DELAY 800
+STRING winmine
+ENTER
+DELAY 1500

@@ -1,0 +1,27 @@
+REM Controls system audio and opens sound settings
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING sndvol
+ENTER
+DELAY 2000
+GUI r
+DELAY 800
+STRING powershell
+ENTER
+DELAY 2000
+STRING Add-Type -TypeDefinition 'using System.Runtime.InteropServices; [Guid("5CDF2C82-841E-4546-9722-0CF74078229A"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)] interface IAudioEndpointVolume { int RegisterControlChangeNotify(IntPtr pNotify); int UnregisterControlChangeNotify(IntPtr pNotify); int GetChannelCount(out int pnChannelCount); int SetMasterVolumeLevel(float fLevelDB, int pguidEventContext); int SetMasterVolumeLevelScalar(float fLevel, int pguidEventContext); int GetMasterVolumeLevel(out float pfLevelDB); int GetMasterVolumeLevelScalar(out float pfLevel); int SetChannelVolumeLevel(uint nChannel, float fLevelDB, int pguidEventContext); int SetChannelVolumeLevelScalar(uint nChannel, float fLevel, int pguidEventContext); int GetChannelVolumeLevel(uint nChannel, out float pfLevelDB); int GetChannelVolumeLevelScalar(uint nChannel, out float pfLevel); int SetMute([MarshalAs(UnmanagedType.Bool)] Boolean bMute, int pguidEventContext); int GetMute(out bool pbMute); int GetVolumeStepInfo(out uint pnStep, out uint pnStepCount); int VolumeStepUp(int pguidEventContext); int VolumeStepDown(int pguidEventContext); int QueryHardwareSupport(out int pdwHardwareSupportMask); int GetVolumeRange(out float pflVolumeMindB, out float pflVolumeMaxdB, out float pflVolumeIncrementdB); } [Guid("D666063F-1587-4E43-81F1-B948E807363F"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)] interface IMMDevice { int Activate([MarshalAs(UnmanagedType.LPStruct)] Guid id, uint dwClsCtx, IntPtr pActivationParams, [MarshalAs(UnmanagedType.IUnknown)] out object ppInterface); int OpenPropertyStore(uint stgmAccess, out IntPtr ppProperties); int GetId([MarshalAs(UnmanagedType.LPWStr)] out string ppstrId); int GetState(out int pdwState); } [Guid("A95664D2-9614-4F35-A746-DE8DB63617E6"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)] interface IMMDeviceEnumerator { int EnumAudioEndpoints(uint dataFlow, uint dwStateMask, out IntPtr ppDevices); int GetDefaultAudioEndpoint(uint dataFlow, uint role, out IMMDevice ppEndpoint); int GetDevice(string pwstrId, out IMMDevice ppDevice); int RegisterEndpointNotificationCallback(IntPtr pClient); int UnregisterEndpointNotificationCallback(IntPtr pClient); } [ComImport] [Guid("BCDE0395-E52F-467C-8E3D-C4579291692E")] class MMDeviceEnumerator { } public class AudioUtils { private static IAudioEndpointVolume Vol() { var enumerator = new MMDeviceEnumerator() as IMMDeviceEnumerator; IMMDevice dev = null; Marshal.ThrowExceptionForHR(enumerator.GetDefaultAudioEndpoint(0, 1, out dev)); IAudioEndpointVolume epv = null; var epvid = typeof(IAudioEndpointVolume).GUID; Marshal.ThrowExceptionForHR(dev.Activate(epvid, 23, IntPtr.Zero, out epv)); return epv; } public static float GetMasterVolume() { IAudioEndpointVolume vol = Vol(); float levelScalar = 0; Marshal.ThrowExceptionForHR(vol.GetMasterVolumeLevelScalar(out levelScalar)); return levelScalar * 100; } public static void SetMasterVolume(float newLevel) { IAudioEndpointVolume vol = Vol(); Marshal.ThrowExceptionForHR(vol.SetMasterVolumeLevelScalar(newLevel / 100, 0)); } public static void Mute() { IAudioEndpointVolume vol = Vol(); Marshal.ThrowExceptionForHR(vol.SetMute(true, 0)); } public static void UnMute() { IAudioEndpointVolume vol = Vol(); Marshal.ThrowExceptionForHR(vol.SetMute(false, 0)); } }'
+ENTER
+DELAY 2000
+STRING Write-Host "Current Volume:" ([AudioUtils]::GetMasterVolume()).ToString("F0") -ForegroundColor Green
+ENTER
+DELAY 1000
+STRING [AudioUtils]::SetMasterVolume(50)
+ENTER
+DELAY 500
+STRING Write-Host "Volume set to 50% by Flipper Zero!" -ForegroundColor Yellow
+ENTER
+DELAY 1000
+STRING Read-Host "Press Enter to continue"
+ENTER

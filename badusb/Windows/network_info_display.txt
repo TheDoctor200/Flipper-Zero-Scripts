@@ -1,0 +1,28 @@
+REM Shows network configuration info
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING cmd
+ENTER
+DELAY 1200
+STRING echo ===== NETWORK INFORMATION =====
+ENTER
+DELAY 800
+STRING ipconfig
+ENTER
+DELAY 2000
+STRING echo.
+ENTER
+STRING echo ===== ACTIVE CONNECTIONS =====
+ENTER
+DELAY 500
+STRING netstat -an | findstr ESTABLISHED
+ENTER
+DELAY 2000
+STRING echo.
+ENTER
+STRING echo Press any key to continue...
+ENTER
+STRING pause > nul
+ENTER

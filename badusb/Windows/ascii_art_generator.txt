@@ -1,0 +1,29 @@
+REM Creates ASCII art in Notepad
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING notepad
+ENTER
+DELAY 1500
+STRING ========================================
+ENTER
+STRING    _____ _ _                           
+ENTER
+STRING   |  ___| (_)_ __  _ __   ___ _ __     
+ENTER
+STRING   | |_  | | | '_ \| '_ \ / _ \ '__|    
+ENTER
+STRING   |  _| | | | |_) | |_) |  __/ |       
+ENTER
+STRING   |_|   |_|_| .__/| .__/ \___|_|       
+ENTER
+STRING              |_|   |_|                 
+ENTER
+STRING             Zero BadUSB
+ENTER
+STRING ========================================
+ENTER
+DELAY 500
+STRING Made with Flipper Zero and lots of fun!
+ENTER

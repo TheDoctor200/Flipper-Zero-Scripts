@@ -1,0 +1,25 @@
+REM Creates PowerShell script to make desktop shortcuts
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING powershell
+ENTER
+DELAY 2000
+STRING $WshShell = New-Object -comObject WScript.Shell
+ENTER
+DELAY 500
+STRING $Shortcut = $WshShell.CreateShortcut("$env:USERPROFILE\Desktop\System Info.lnk")
+ENTER
+DELAY 500
+STRING $Shortcut.TargetPath = "msinfo32.exe"
+ENTER
+DELAY 500
+STRING $Shortcut.Save()
+ENTER
+DELAY 800
+STRING Write-Host "Desktop shortcut created!" -ForegroundColor Green
+ENTER
+DELAY 1000
+STRING Read-Host "Press Enter to exit"
+ENTER

@@ -1,0 +1,39 @@
+REM Creates animated text in command prompt
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING cmd
+ENTER
+DELAY 1200
+STRING cls
+ENTER
+DELAY 500
+STRING echo Loading Flipper Magic...
+ENTER
+DELAY 1000
+STRING echo [#         ] 10%
+ENTER
+DELAY 1000
+STRING echo [###       ] 30%
+ENTER
+DELAY 1000
+STRING echo [#####     ] 50%
+ENTER
+DELAY 1000
+STRING echo [#######   ] 70%
+ENTER
+DELAY 1000
+STRING echo [#########  ] 90%
+ENTER
+DELAY 1000
+STRING echo [##########] 100%
+ENTER
+DELAY 500
+STRING echo.
+ENTER
+STRING echo Flipper Zero BadUSB Demo Complete!
+ENTER
+DELAY 2000
+STRING pause
+ENTER

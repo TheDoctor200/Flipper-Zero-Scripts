@@ -1,0 +1,8 @@
+REM Creates a folder on Desktop and opens it
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING cmd /c mkdir "%USERPROFILE%\Desktop\Flipper_Fun" & explorer "%USERPROFILE%\Desktop\Flipper_Fun"
+ENTER
+DELAY 2000

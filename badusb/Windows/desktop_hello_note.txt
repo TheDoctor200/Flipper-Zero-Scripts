@@ -1,0 +1,8 @@
+REM Creates a small text note on the Desktop
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING cmd /c echo Hello from Flipper! > "%USERPROFILE%\Desktop\Hello_From_Flipper.txt"
+ENTER
+DELAY 1500

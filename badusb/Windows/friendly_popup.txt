@@ -1,0 +1,8 @@
+REM Shows a friendly popup message (works best on Pro/Enterprise)
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING cmd /c msg * Hello from Flipper! This is a friendly, safe popup. :)
+ENTER
+DELAY 1500

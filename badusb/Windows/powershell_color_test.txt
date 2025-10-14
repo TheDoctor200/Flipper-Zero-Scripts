@@ -1,0 +1,25 @@
+REM Opens PowerShell and displays colorful text
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING powershell
+ENTER
+DELAY 2000
+STRING Write-Host "Hello from Flipper Zero!" -ForegroundColor Green
+ENTER
+DELAY 800
+STRING Write-Host "This is RED text" -ForegroundColor Red
+ENTER
+DELAY 800
+STRING Write-Host "This is BLUE text" -ForegroundColor Blue
+ENTER
+DELAY 800
+STRING Write-Host "This is YELLOW text" -ForegroundColor Yellow
+ENTER
+DELAY 800
+STRING Write-Host "Rainbow mode activated!" -ForegroundColor Magenta
+ENTER
+DELAY 800
+STRING Read-Host "Press Enter to continue"
+ENTER

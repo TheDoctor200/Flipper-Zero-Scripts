@@ -1,0 +1,8 @@
+REM Opens the On-Screen Keyboard (useful accessibility tool)
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING osk
+ENTER
+DELAY 2000

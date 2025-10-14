@@ -1,0 +1,33 @@
+REM Creates organized folder structure on Desktop
+DEFAULT_DELAY 200
+DELAY 5000
+GUI r
+DELAY 800
+STRING cmd
+ENTER
+DELAY 1200
+STRING cd "%USERPROFILE%\Desktop"
+ENTER
+DELAY 500
+STRING mkdir "Flipper_Organization"
+ENTER
+DELAY 500
+STRING cd "Flipper_Organization"
+ENTER
+DELAY 500
+STRING mkdir "Documents" "Images" "Videos" "Downloads" "Projects"
+ENTER
+DELAY 800
+STRING echo Folder structure created! > README.txt
+ENTER
+DELAY 500
+STRING echo. >> README.txt
+ENTER
+STRING echo This organization was created by Flipper Zero! >> README.txt
+ENTER
+DELAY 500
+STRING notepad README.txt
+ENTER
+DELAY 1000
+STRING exit
+ENTER
