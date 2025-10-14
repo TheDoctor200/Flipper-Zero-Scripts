@@ -1,0 +1,65 @@
+REM Title: iOS VPN Configuration Assessment
+REM Description: Reviews and configures VPN settings
+REM Target: iOS devices for network security testing
+REM Author: Educational/Research purposes only
+
+DELAY 1000
+REM Open Settings
+GUI SPACE
+DELAY 1200
+STRING Settings
+DELAY 1200
+ENTER
+DELAY 4000
+
+REM Navigate to VPN settings
+GUI f
+DELAY 800
+STRING VPN
+DELAY 1000
+ENTER
+DELAY 2500
+
+REM Screenshot existing VPN configs
+GUI VOLUME_UP
+DELAY 1500
+
+REM Add new VPN configuration for testing
+STRING Add VPN Configuration
+DELAY 1000
+ENTER
+DELAY 2500
+
+REM Select IKEv2 protocol
+STRING IKEv2
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Fill test configuration
+TAB
+DELAY 500
+STRING TestVPN
+DELAY 800
+
+REM Server field
+TAB
+DELAY 500
+STRING test.vpn.local
+DELAY 800
+
+REM Remote ID field
+TAB
+DELAY 500
+STRING test.remote.id
+DELAY 800
+
+REM Screenshot configuration
+GUI VOLUME_UP
+DELAY 1500
+
+REM Save configuration
+STRING Done
+DELAY 500
+ENTER
+DELAY 1000

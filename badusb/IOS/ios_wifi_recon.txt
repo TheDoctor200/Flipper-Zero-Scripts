@@ -1,0 +1,43 @@
+REM Title: iOS Wi-Fi Reconnaissance
+REM Description: Gathers Wi-Fi network information for security assessment
+REM Target: iOS devices for authorized testing
+REM Author: Educational/Research purposes only
+
+DELAY 1000
+REM Open Settings via Spotlight
+GUI SPACE
+DELAY 1200
+STRING Settings
+DELAY 1200
+ENTER
+DELAY 4000
+
+REM Navigate to Wi-Fi settings
+GUI f
+DELAY 800
+STRING Wi-Fi
+DELAY 800
+ENTER
+DELAY 2500
+
+REM Screenshot available networks
+GUI VOLUME_UP
+DELAY 1500
+
+REM Access current network details
+RIGHTARROW
+DELAY 500
+ENTER
+DELAY 2000
+
+REM Capture network configuration
+GUI VOLUME_UP
+DELAY 1500
+
+REM Scroll to see IP, DNS settings
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DELAY 800
+GUI VOLUME_UP
+DELAY 500

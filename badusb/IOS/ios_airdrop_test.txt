@@ -1,0 +1,61 @@
+REM Title: iOS AirDrop Security Test
+REM Description: Tests AirDrop configuration and sharing
+REM Target: iOS devices for security assessment
+REM Author: Educational/Research purposes only
+
+DELAY 1000
+REM Open Control Center
+GUI ESCAPE
+DELAY 2000
+
+REM Access AirDrop settings
+STRING AirDrop
+DELAY 1000
+ENTER
+DELAY 1500
+
+REM Screenshot AirDrop configuration
+GUI VOLUME_UP
+DELAY 1500
+
+REM Set to Contacts Only for security
+STRING Contacts Only
+DELAY 800
+ENTER
+DELAY 1000
+
+REM Close Control Center
+ESC
+DELAY 1000
+
+REM Test file sharing capability
+GUI SPACE
+DELAY 1200
+STRING Files
+DELAY 1200
+ENTER
+DELAY 4000
+
+REM Access recent files
+STRING Recent
+DELAY 800
+ENTER
+DELAY 2000
+
+REM Select a test file
+ENTER
+DELAY 1500
+
+REM Open share sheet
+GUI i
+DELAY 2000
+
+REM Access AirDrop sharing
+STRING AirDrop
+DELAY 1000
+ENTER
+DELAY 2000
+
+REM Screenshot available devices
+GUI VOLUME_UP
+DELAY 500

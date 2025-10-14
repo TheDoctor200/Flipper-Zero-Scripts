@@ -1,0 +1,67 @@
+REM Title: iOS Device Audit
+REM Description: Collects device information for security audit
+REM Target: iOS devices for authorized assessment
+REM Author: Educational/Research purposes only
+
+DELAY 1000
+REM Open Settings
+GUI SPACE
+DELAY 1200
+STRING Settings
+DELAY 1200
+ENTER
+DELAY 4000
+
+REM Access General > About
+GUI f
+DELAY 800
+STRING General
+DELAY 1000
+ENTER
+DELAY 2000
+STRING About
+DELAY 800
+ENTER
+DELAY 2500
+
+REM Capture device details
+GUI VOLUME_UP
+DELAY 2000
+
+REM Scroll through all information
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DOWNARROW
+DELAY 1000
+GUI VOLUME_UP
+DELAY 2000
+
+REM Check storage information
+ESC
+DELAY 1500
+GUI f
+DELAY 800
+STRING iPhone Storage
+DELAY 1000
+ENTER
+DELAY 3500
+GUI VOLUME_UP
+DELAY 1500
+
+REM Check battery health
+ESC
+DELAY 1500
+GUI f
+DELAY 800
+STRING Battery
+DELAY 1000
+ENTER
+DELAY 2500
+STRING Battery Health
+DELAY 800
+ENTER
+DELAY 2000
+GUI VOLUME_UP
+DELAY 500
